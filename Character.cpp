@@ -2,7 +2,7 @@
 
 Character::Character(std::string nName): name(nName) 
 {
-	itsWeapon = new Weapon(3, "Munch ", "");
+	itsWeapon = new Weapon(3, "Knife", "");
 	itsArmor = new Armor(0, 35, "Unarmored", "");
 	lvl = 1;
 	exp = 0;
@@ -63,23 +63,23 @@ void Character::TakeDamage(Enemy* &theEnemy)
 		hp -= damage;
 
 		if (hp <= 0)
-			cout << "The " << theEnemy->GetName() << " raises his " << theEnemy->GetWeapon() << " and clots " << GetName() << "'s artery!\n\n";
+			cout << "The " << theEnemy->GetName() << " raises his " << theEnemy->GetWeapon() << " and bashes " << GetName() << "'s skull in!\n\n";
 
 		else
 		{
 
 		if (damage <= 3)
-			cout << theEnemy->GetName() << " uses its " << theEnemy->GetWeapon() << " and clots " << GetName() << " for " << damage << " damage!\n\n";
+			cout << theEnemy->GetName() << " uses his " << theEnemy->GetWeapon() << " and strikes " << GetName() << " for " << damage << " damage!\n\n";
 		
 		if (damage <= 6 && damage > 3)
-			cout << theEnemy->GetName() << " clots " << GetName() << " with its " << theEnemy->GetWeapon() << " for " << damage << " damage!\n\n";
+			cout << theEnemy->GetName() << " slashes at " << GetName() << " with his " << theEnemy->GetWeapon() << " for " << damage << " damage!\n\n";
 
 
 		if (damage <= 9 && damage > 6)
-			cout << "The " << theEnemy->GetName() << " clots a lot of " << GetName() << " for " << damage << " damage!\n\n";
+			cout << "The " << theEnemy->GetName() << " wrecks " << GetName() << " for " << damage << " damage!\n\n";
 
 		if (damage > 9)
-			cout << "The " << theEnemy->GetName() << " clots " << GetName() << " immensely for " << damage << " damage!\n\n";
+			cout << "The " << theEnemy->GetName() << " stabs " << GetName() << " immensely for " << damage << " damage!\n\n";
 		}
 	}
 
@@ -88,7 +88,7 @@ void Character::TakeDamage(Enemy* &theEnemy)
 		int miss_message = rand() % 3 + 1;
 		
 		if (miss_message == 1)
-			cout << "The " << theEnemy->GetName() << " tries to clot with " << theEnemy->GetWeapon() << " at " << GetName() << " but misses!\n\n";
+			cout << "The " << theEnemy->GetName() << " tries to hit with " << theEnemy->GetWeapon() << " at " << GetName() << " but misses!\n\n";
 		if (miss_message == 2)
 			cout << "The " << theEnemy->GetName() << " lifts his " << theEnemy->GetWeapon() << " over his head.. but nothing happens!\n\n";
 		if (miss_message == 3)
@@ -129,12 +129,12 @@ void Character::GetStats() const
 	cout << name << "'s Stats\n";
 	cout << "==============================\n"; 
 	cout << "Level: " << lvl << endl;
-	cout << "Meals Devoured: " << victories << endl;
-	cout << "Fat: " << gold << endl;
+	cout << "Enemies Vanquished: " << victories << endl;
+	cout << "Gold: " << gold << endl;
 	cout << "Health: " << hp << endl;
-	cout << "Eating Power: " << str << endl;
-	cout << "Eating Accuracy: " << dex << endl;
-	cout << "Clot Resistance: " << con << endl;
+	cout << "Strength: " << str << endl;
+	cout << "Dexterity: " << dex << endl;
+	cout << "Resistance: " << con << endl;
 	cout << "==============================\n\n"; 
 	system("PAUSE");
 	system("cls");
@@ -150,12 +150,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 1)
 	{
 		if (gold < 1)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(4, "Mouth ", "Straighteners");
+			itsWeapon = new Weapon(4, "Sword", "");
 			gold -= 1;
 			cout << "Weapon purchased.\n";
 		}
@@ -164,12 +164,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 2)
 	{
 		if (gold < 2)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(4, "Harder ", "Teeth");
+			itsWeapon = new Weapon(4, "Long", "sword");
 			gold -= 2;
 			cout << "Weapon purchased.\n";
 		}
@@ -178,12 +178,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 3)
 	{
 		if (gold < 5)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(6, "Stronger ", "Stomach");
+			itsWeapon = new Weapon(6, "Battle ", "Axe");
 			gold -= 5;
 			cout << "Weapon purchased.\n";
 		}
@@ -192,12 +192,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 4)
 	{
 		if (gold < 6)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(6, "Steel ", "Teeth");
+			itsWeapon = new Weapon(6, "Spear", "");
 			gold -= 6;
 			cout << "Weapon purchased.\n";
 		}
@@ -206,12 +206,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 5)
 	{
 		if (gold < 6.5f)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(6, "Superdigestive ", "Fluids");
+			itsWeapon = new Weapon(6, "Broad", "sword");
 			gold -= 6.5f;
 			cout << "Weapon purchased.\n";
 		}
@@ -220,12 +220,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 6)
 	{
 		if (gold < 7)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(6, "Steel ", "Stomach");
+			itsWeapon = new Weapon(6, "Orc ", "Cleaver");
 			gold -= 7;
 			cout << "Weapon purchased.\n";
 		}
@@ -234,12 +234,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 7)
 	{
 		if (gold < 8)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(8, "Gold ", "Teeth");
+			itsWeapon = new Weapon(8, "Dragonsbane", "");
 			gold -= 8;
 			cout << "Weapon purchased.\n";
 		}
@@ -248,12 +248,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 8)
 	{
 		if (gold < 9)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(8, "Heart ", "Resistance");
+			itsWeapon = new Weapon(8, "Sword ", "of Light");
 			gold -= 9;
 				cout << "Weapon purchased.\n";
 		}
@@ -262,12 +262,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 9)
 	{
 		if (gold < 9.5f)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(8, "Super ", "Stomach");
+			itsWeapon = new Weapon(8, "Sword ", "of Darkness");
 			gold -= 9.5f;
 			cout << "Weapon purchased.\n";
 		}
@@ -276,12 +276,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 10)
 	{
 		if (gold < 11)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(10, "Super ", "Teeth");
+			itsWeapon = new Weapon(10, "Trident ", "of Doom");
 			gold -= 11;
 			cout << "Weapon purchased.\n";
 		}
@@ -290,12 +290,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 11)
 	{
 		if (gold < 12)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(10, "Super ", "Heart");
+			itsWeapon = new Weapon(10, "Crimson ", "Fury");
 			gold -= 12;
 			cout << "Weapon purchased.\n";
 		}
@@ -304,12 +304,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 12)
 	{
 		if (gold < 12.5f)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(10, "Artery ", "Defenses");
+			itsWeapon = new Weapon(10, "Lightsaber", "");
 			gold -= 12.5f;
 			cout << "Weapon purchased.\n";
 		}
@@ -318,12 +318,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 13)
 	{
 		if (gold < 16)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(12, "Prescription ", "Drugs");
+			itsWeapon = new Weapon(12, "Thor's ", "Hammer");
 			gold -= 16;
 			cout << "Weapon purchased.\n";
 		}
@@ -332,12 +332,12 @@ void Character::ChangeWeapon(int weapon)
 	if (weapon == 14)
 	{
 		if (gold < 20)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsWeapon;
-			itsWeapon = new Weapon(16, "Pure ", "Body");
+			itsWeapon = new Weapon(16, "Double-edged ", "Lightsaber");
 			gold -= 20;
 			cout << "Weapon purchased.\n";
 		}
@@ -349,12 +349,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 1)
 	{
 		if (gold < 5)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(1, 8, "Immune ", "System");
+			itsArmor = new Armor(1, 8, "Rusty ", "Armor");
 			gold -= 5;
 			cout << "Armor purchased.\n";
 		}
@@ -363,12 +363,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 2)
 	{
 		if (gold < 10)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(2, 6, "Stomach ", "Shields");
+			itsArmor = new Armor(2, 6, "Iron ", "Armor");
 			gold -= 10;
 			cout << "Armor purchased.\n";
 		}
@@ -377,12 +377,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 3)
 	{
 		if (gold < 15)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(3, 4, "Power ", "Belly");
+			itsArmor = new Armor(3, 4, "Steel ", "Armor");
 			gold -= 15;
 			cout << "Armor purchased.\n";
 		}
@@ -391,12 +391,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 4)
 	{
 		if (gold < 25)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(3, 5, "Helpful ", "Bacteria");
+			itsArmor = new Armor(3, 5, "Dragon's ", "Armor");
 			gold -= 25;
 			cout << "Armor purchased.\n";
 		}
@@ -405,12 +405,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 5)
 	{
 		if (gold < 50)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(4, 3, "Heart ", "Shield");
+			itsArmor = new Armor(4, 3, "Steel ", "Shield");
 			gold -= 50;
 			cout << "Armor purchased.\n";
 		}
@@ -419,12 +419,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 6)
 	{
 		if (gold < 100)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(4, 4, "Artery ", "Free");
+			itsArmor = new Armor(4, 4, "Crystal ", "Shield");
 			gold -= 100;
 			cout << "Armor purchased.\n";
 		}
@@ -433,12 +433,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 7)
 	{
 		if (gold < 150)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(5, 2, "Cardiac ", "Surgery");
+			itsArmor = new Armor(5, 2, "Holy ", "Shield");
 			gold -= 150;
 			cout << "Armor purchased.\n";
 		}
@@ -447,12 +447,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 8)
 	{
 		if (gold < 200)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(5, 3, "Extra ", "Vein");
+			itsArmor = new Armor(5, 3, "Shield ", "of Sorcery");
 			gold -= 200;
 			cout << "Armor purchased.\n";
 		}
@@ -461,12 +461,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 9)
 	{
 		if (gold < 225)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(6, 0, "Super ", "Defense");
+			itsArmor = new Armor(6, 0, "Barrier", "");
 			gold -= 225;
 			cout << "Armor purchased.\n";
 		}
@@ -475,12 +475,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 10)
 	{
 		if (gold < 250)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(6, 1, "Heart ", "Strong");
+			itsArmor = new Armor(6, 1, "Magical ", "Barrier");
 			gold -= 250;
 			cout << "Armor purchased.\n";
 		}
@@ -489,12 +489,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 11)
 	{
 		if (gold < 600)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(7, 0, "Super ", "Surgery");
+			itsArmor = new Armor(7, 0, "Holy ", "Barrier");
 			gold -= 600;
 			cout << "Armor purchased.\n";
 		}
@@ -503,12 +503,12 @@ void Character::ChangeArmor(int armor)
 	if (armor == 12)
 	{
 		if (gold < 1000)
-			cout << "Not enough fat!\n";
+			cout << "Not enough gold!\n";
 		
 		else
 		{
 			delete itsArmor;
-			itsArmor = new Armor(8, 1, "Superawesome ", "Defense");
+			itsArmor = new Armor(8, 1, "Iron Man ", "Suit");
 			gold -= 1000;
 			cout << "Armor purchased.\n";
 		}
