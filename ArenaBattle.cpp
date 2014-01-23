@@ -16,8 +16,8 @@ int main()
     SetConsoleTextAttribute(handle, 14); // Set the color of the text to yellow
 	Character* theCharacter = 0;
 	srand(time(0));
-	cout << "Welcome to Arena Battle (Gong Sim 2008 Edition) !\n";
-	cout << "Created by Michael Liu (With special text from Charles Yan)!\n\n";
+	cout << "Welcome to Arena Battle!\n";
+	cout << "Created by Michael Liu! (Now with updated text)\n\n";
 	cout  << "Press ENTER to start the game.";
 	cin.get();
 	system("cls");
