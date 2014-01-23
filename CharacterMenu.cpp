@@ -14,13 +14,13 @@ void CharacterMenu(Character* &theCharacter)
 void ChooseName(Character* &theCharacter)
 {
 	string name;
-	cout << "Enter the name you would like for your Gong.\n";
+	cout << "Enter the name you would like for your hero.\n";
 	cout << "Name: ";
 	cin >> name;
 
 	system("cls");
 	theCharacter = new Character(name);
-	cout << "\nYour Gong, " << theCharacter->GetName() << ", has been created.\n\n";
+	cout << "\nYour character, " << theCharacter->GetName() << ", has been created.\n\n";
 	
 }
 
@@ -33,9 +33,9 @@ void RollStats(Character* &theCharacter)
 	{
 		GenerateStats(hp, str, dex, con);
 		cout << "Health: " << hp << endl;
-		cout << "Eating Power: " << str << endl;
-		cout << "Eating Accuracy: " << dex << endl;
-		cout << "Clot Resistance: " << con << endl;
+		cout << "Strength: " << str << endl;
+		cout << "Dexterity: " << dex << endl;
+		cout << "Endurance: " << con << endl;
 		cout << "\nRoll stats again? (y/n):";
 		cin >> roll;
 		system("cls");
@@ -69,3 +69,27 @@ void GenerateStats(int& hp, int& str, int& dex, int& con)
 		con += statBalancer;
 
 	int stat = rand() % 4 + 1;
+
+	if (stat == 1)
+		highStat = &hp;
+
+	if (stat == 2)
+		highStat = &str;
+
+	if (stat == 3)
+		highStat = &dex;
+
+	if (stat == 4)
+		highStat = &con;
+	
+	while ((hp + str + dex + con) < total)
+	{
+		*highStat += 1;	
+	}
+
+	while ((hp + str + dex + con) > total)
+	{
+		*highStat -= 1;	
+	}
+
+}
