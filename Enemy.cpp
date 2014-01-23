@@ -9,7 +9,7 @@ Enemy::Enemy(string nName1, string nName2, int nLvl): name1(nName1), name2(nName
 
 	if (lvl == 1 || lvl == 2)
 	{
-		itsWeapon = new Weapon(3, "Normal ", "Clot");
+		itsWeapon = new Weapon(3, "Sword", "");
 		itsArmor = new Armor(0, 35, "Unarmored", "");
 	}
 
@@ -18,17 +18,17 @@ Enemy::Enemy(string nName1, string nName2, int nLvl): name1(nName1), name2(nName
 		weapon = rand() % 2 + 1;
 		
 		if (weapon == 1)
-			itsWeapon = new Weapon(4, "Special ", "Clot");
+			itsWeapon = new Weapon(4, "Long", "sword");
 
 		else
-			itsWeapon = new Weapon(4, "Advanced ", "Clot");
+			itsWeapon = new Weapon(4, "Steel ", "Sword");
 
 		if (lvl == 3)
-			itsArmor = new Armor(1, 8, "Protection ", "Shield");
+			itsArmor = new Armor(1, 8, "Rusty ", "Armor");
 		if (lvl == 4)
-			itsArmor = new Armor(2, 6, "Body ", "Blocker");
+			itsArmor = new Armor(2, 6, "Iron ", "Armor");
 		if (lvl == 5)
-			itsArmor = new Armor(3, 4, "Another ", "Blocker");
+			itsArmor = new Armor(3, 4, "Steel ", "Armor");
 	}
 
 	if (lvl == 6 || lvl == 7 || lvl == 8)
@@ -36,23 +36,23 @@ Enemy::Enemy(string nName1, string nName2, int nLvl): name1(nName1), name2(nName
 		weapon == rand() % 4 + 1;
 
 		if (weapon == 1)
-			itsWeapon = new Weapon(6, "Stomach ", "Ulcer");
+			itsWeapon = new Weapon(6, "Battle ", "Axe");
 
 		if (weapon == 2)
-			itsWeapon = new Weapon(6, "Immune ", "Destruction");
+			itsWeapon = new Weapon(6, "Dark ", "Axe");
 
 		if (weapon == 3)
-			itsWeapon = new Weapon(6, "Heart ", "Penetration");
+			itsWeapon = new Weapon(6, "Darksword", "");
 
 		if (weapon == 4)
-			itsWeapon = new Weapon(6, "More ", "Penetration");
+			itsWeapon = new Weapon(6, "Battle ", "Mace");
 
 		if (lvl == 6)
-			itsArmor = new Armor(3, 5, "Bacterial ", "Shield");
+			itsArmor = new Armor(3, 5, "Crystal ", "Armor");
 		if (lvl == 7)
-			itsArmor = new Armor(4, 3, "Fat ", "Stuff");
+			itsArmor = new Armor(4, 3, "Dark ", "Armor");
 		if (lvl == 8)
-			itsArmor = new Armor(4, 4, "Oil ", "Armor");
+			itsArmor = new Armor(4, 4, "Unholy ", "Armor");
 	}
 
 	if (lvl == 9 || lvl == 10 || lvl == 11)
@@ -60,20 +60,20 @@ Enemy::Enemy(string nName1, string nName2, int nLvl): name1(nName1), name2(nName
 		weapon == rand() % 3 + 1;
 
 		if (weapon == 1)
-			itsWeapon = new Weapon(8, "Bacterial ", "Release");
+			itsWeapon = new Weapon(8, "Dark ", "Axe");
 
 		if (weapon == 2)
-			itsWeapon = new Weapon(8, "Infection", "");
+			itsWeapon = new Weapon(8, "Unholy", "Axe");
 
 		if (weapon == 3)
-			itsWeapon = new Weapon(8, "Fat ", "Clot");
+			itsWeapon = new Weapon(8, "Axe ", "of Destruction");
 
 		if (lvl == 9)
-			itsArmor = new Armor(5, 2, "More ", "Fat");
+			itsArmor = new Armor(5, 2, "Orc ", "Armor");
 		if (lvl == 10)
-			itsArmor = new Armor(5, 3, "Superfat", "");
+			itsArmor = new Armor(5, 3, "Orc ", "Shield");
 		if (lvl == 11)
-			itsArmor = new Armor(6, 0, "Intense ", "Fat");
+			itsArmor = new Armor(6, 0, "Unholy ", "Shield");
 	}
 
 	if (lvl == 12 || lvl == 13 || lvl == 14)
@@ -81,27 +81,27 @@ Enemy::Enemy(string nName1, string nName2, int nLvl): name1(nName1), name2(nName
 		weapon == rand() % 3 + 1;
 
 		if (weapon == 1)
-			itsWeapon = new Weapon(10, "Heart ", "Attack");
+			itsWeapon = new Weapon(10, "Dark ", "Trident");
 
 		if (weapon == 2)
-			itsWeapon = new Weapon(10, "Cardiac ", "Arrest");
+			itsWeapon = new Weapon(10, "Unholy ", "Trident");
 
 		if (weapon == 3)
-			itsWeapon = new Weapon(10, "Super ", "Infection");
+			itsWeapon = new Weapon(10, "Trident ", "of Destruction");
 
 			itsArmor = new Armor(6, 1, "Inpenetrable ", "Armor");		
 	}
 
 	if (lvl == 15 || lvl == 16 || lvl == 17)
 	{
-		itsWeapon == new Weapon(12, "Superduper ", "Infection");
-		itsArmor = new Armor(7, 0, "Superduper ", "Armor");
+		itsWeapon == new Weapon(12, "Devil's ", "Sword");
+		itsArmor = new Armor(7, 0, "Devil's ", "Armor");
 	}
 
 	if (lvl == 18 || lvl == 19 || lvl == 20)
 	{
-		itsWeapon == new Weapon(16, "Deadly ", "Infection");
-		itsArmor = new Armor(8, 1, "Awesome ", "Armor");
+		itsWeapon == new Weapon(16, "Vader's ", "Lightsaber");
+		itsArmor = new Armor(8, 1, "Super Evil ", "Armor");
 	}
 }
 
