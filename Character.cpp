@@ -560,7 +560,7 @@ void Character::DetermineRewards()
 
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(handle, 9); //set color to light blue
-	cout << GetName() << " earns " << earned_exp << " exp and " << earned_gold << "fat.\n\n";
+	cout << GetName() << " earns " << earned_exp << " exp and " << earned_gold << "gold.\n\n";
 	++victories;
 	SetConsoleTextAttribute(handle, 14); //reset color to yellow
 }
